@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make Force Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="network.js"></script>
+
+</head>
+<body>
+    <div class="page text-center">
+        <div class="row">
+            <h1 class="display-6">Week 7 - Activity 5</h1>
+            <h3 class="lead">David English</h3>
+        </div>
+        <div class="row" id="network"></div>
+   </div>
+<script>
+    d3.json("./data/publication_network.json").then(function (data){
+        let svg = d3.select('#network').append("svg").attr("viewBox","0 0 1000 800")
+
+        simulate(data,svg) // main function to make network
+    })
+
+
+
+</script>
+
+</body>
+</html>
